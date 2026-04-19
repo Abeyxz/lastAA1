@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Signup Page</title>
+
+<style>
+
+body{
+font-family: Arial;
+background-color:#aeff9a;
+}
+
+.container{
+background:white;
+width:420px;
+padding:30px;
+box-shadow:0 10px 30px rgba(0,0,0,0.2);
+}
+
+span{
+color:red;
+font-size:12px;
+display:block;
+margin-bottom:10px;
+}
+
+#successMessage{
+color:green;
+font-weight:bold;
+}
+
+</style>
+
+</head>
+
+<body
+    <div class="container">
+
+        <h2>Join Our Community</h2>
+
+        <form onsubmit="return validateForm()">
+            <h3>Personal Information</h3>
+
+            <label>Full Name</label>
+            <input type="text" id="fullname" onblur="validateForm()">
+            <span id="nameError"></span>
+
+            <label>Birthdate</label>
+            <input type="date" id="birthdate">
+
+            <span id="birthError"></span>
+            <label>Sex</label><br>
+            <input type="radio" name="sex" value="male"> Male
+            <input type="radio" name="sex" value="female"> Female
+            <input type="radio" name="sex" value="other"> Other
+            <span id="sexError"></span>
+
+<!-- ACCOUNT DETAILS -->
+        <h3>Account Details</h3>
+            <label>Email</label>
+            <input type="email" id="email">
+            <span id="emailError"></span>
+            <label>Username</label>
+            <input type="text" id="username">
+            <span id="userError"></span>
+
+            <label>Password</label>
+            <input type="password" id="password">
+            <span id="passError"></span>
+
+            <label>Confirm Password</label>
+            <input type="password" id="confirmPassword">
+            <span id="confirmError"></span>
+<!-- TOPIC QUESTIONS -->
+        <h3>Topic Questions</h3>
+            <label>Which topic interests you most?</label>
+            <select id="topicSelect">
+                <option value="">-- choose --</option>
+                <option value="tutorials">Tutorials</option>
+                <option value="news">Tech News</option>
+                <option value="projects">Coding Projects</option>
+            </select>
+
+            <span id="dropError"></span>
+
+            <label>What programming languages interest you?</label><br>
+            <input type="checkbox" name="interests" value="html"> HTML<br>
+            <input type="checkbox" name="interests" value="css"> CSS<br>
+            <input type="checkbox" name="interests" value="javascript"> JavaScript<br>
+            <input type="checkbox" name="interests" value="python"> Python<br>
+            <span id="checkError"></span>
+            <label>How many hours per week do you code?</label>
+            <input type="number" id="thirdQuestion" min="0">
+            <span id="thirdError"></span>
+            <br>
+            <input type="submit" value="Join Our Coding Community!">
+            <p id="successMessage"></p>
+            <br>
+            <a href="index.html">Back to Homepage</a>
+
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

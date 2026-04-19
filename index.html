@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #main {
+            width:520px;
+            padding: 10px;
+            margin: 0 auto;
+            border: 1px solid purple;
+            background-color: rgb(255, 255, 196);
+        }
+    </style>
+</head>
+<body>
+     <div id = "main">
+    <h2>Welcome to My Page!</h2>
+    <h1>Sign Up</h1>
+    <form id = "greetForm" onsubmit = "return validate();">
+        <label for = "fnameInput">Full name: </label><br>
+        <input type = "text" id = "fnameInput" placeholder = "e.g. Abigail">
+        <span id = "nameError"></span><br>
+        <label for = "bdate">Birthdate: </label><br>
+        <input type = "date" id = "bdate">
+        <span id = "birthError"></span><br><br>
+        <label>Sex: </label><br>
+        <input type = "radio" name = "sex" value = "male"> Male <br>
+        <input type = "radio" name = "sex" value = "female"> Female <br>
+        <input type = "radio" name = "sex" value = "other"> Other <br>
+        <span id = "sexError"></span><br>
+        <label>Email: </label><br>
+        <input type = "email" id = "email">
+        <span id = "emailError"></span><br>
+        <label for = "usernameInput">Username: </label><br>
+        <input type = "text" id = "usernameInput"><br>
+        <label>Password: </label><br>
+        <input type = "password" id = "pwdInput"><br>
+        <span id = "passwordError"></span><br>
+        <label>Confirm Password: </label>
+        <input type = "password" id = "Confirm Password"><br>
+        <input type = "submit" value = "Submit">
+    </form>
+    </div>
+
+    <script>
+        function validate() {
+            let valid = true;
+
+            let name = document.getElementById("fnameInput").value.trim();
+            if (name === "" || name.length < 2) {
+                document.getElementById("nameError").innerHTML = "Name must be at least 2 characters.";
+                valid = false;
+            } else {
+                document.getElementById("nameError").innerHTML = "";
+            }
+
+            let bdate = document.getElementById("bdate").value;
+            if (bdate === ""){
+                document.getElementById("birthError").innerHTML = "Birthdate is required.";
+                valid = false;
+            } else {
+                if (age < 13) {
+                    document.getElementById("birthError").innerHTML = "You must be at least 13 years old.";
+                    valid = false;
+                } else {
+                    document.getElementById("birthError").innerHTML = "";
+                }
+            
+        }
+        return valid;
+        }
+    </script>
+</body>
+</html>
