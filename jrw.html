@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Signup</title>
+
+<style>
+
+body{
+font-family:"Segoe UI", sans-serif;
+background: linear-gradient(135deg,#c8ff94,#91ffad);
+margin:0;
+padding:40px 0;
+display:flex;
+justify-content:center;
+align-items:flex-start;
+min-height:100vh;
+overflow-y:auto;
+}
+
+/* SIGNUP CARD */
+
+.container{
+background:white;
+width:450px;
+max-width:90%;
+padding:30px;
+border-radius:12px;
+box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* TITLES */
+
+h2{
+background-color: #fff1c3;
+text-align:center;
+margin-bottom:10px;
+color:#333;
+}
+
+h3{
+margin-top:20px;
+color:#006400;
+}
+
+/* INPUT FIELDS */
+
+input, select{
+width:100%;
+padding:10px;
+margin-top:5px;
+margin-bottom:8px;
+border-radius:6px;
+border:1px solid #ccc;
+font-size:14px;
+transition:0.2s;
+}
+
+input:focus, select:focus{
+outline:none;
+border-color:#4facfe;
+box-shadow:0 0 6px rgba(79,172,254,0.5);
+}
+
+/* RADIO + CHECKBOX GROUPS */
+
+.radio-group,
+.check-group{
+margin-bottom:8px;
+}
+
+/* ERROR MESSAGES */
+
+span{
+color:#e63946;
+font-size:12px;
+display:block;
+margin-bottom:8px;
+}
+
+/* SUCCESS MESSAGE */
+
+#successMessage{
+color:green;
+font-weight:bold;
+text-align:center;
+margin-top:10px;
+}
+
+/* SUBMIT BUTTON */
+
+button{
+width:100%;
+padding:12px;
+margin-top:15px;
+border:none;
+border-radius:8px;
+background:#4facfe;
+color:white;
+font-size:16px;
+cursor:pointer;
+transition:0.3s;
+}
+
+button:hover{
+background:#2a8df0;
+transform:scale(1.03);
+}
+
+
+
+.home-link{
+display:block;
+text-align:center;
+margin-top:15px;
+text-decoration:none;
+color:#4facfe;
+font-weight:bold;
+}
+
+.home-link:hover{
+text-decoration:underline;
+}
+
+</style>
+
+
+</head>
+<body>
+    // main form container
+    <div class="container">
+        // form title
+        <h2>Sign Up as a Volunteer!</h2>
+        <form onsubmit="return validateForm()">
+            <h3>Personal Information</h3>
+
+           <label>Full Name</label>
+           <input type="text" id="fullname" onblur="validateForm()">
+           <span id="nameError"></span>
+
+           <label>Birthdate</label>
+           <input type="date" id="birthdate">
+           <span id="birthError"></span>
+
+           <label>Sex</label>
+           <div class="radio-group">
+            <input type="radio" name="sex"> Male
+            <input type="radio" name="sex"> Female
+            <input type="radio" name="sex"> Other
+
+        </div>
+        <span id="sexError"></span>        
+
+        <h3>Account Details</h3>
+        <label>Email</label>
+        <input type="email" id="email">
+        <span id="emailError"></span>
+
+        <label>Username</label>
+        <input type="text" id="username">
+        <span id="userError"></span>
+
+        <label>Password</label>
+        <input type="password" id="password">
+        <span id="passError"></span>
+
+        <label>Confirm Password</label>
+        <input type="password" id="confirmPassword">
+        <span id="confirmError"></span>
+        
+        <h3>Topic Questions</h3>
+
+        <label>What volunteer role interests you most?</label>
+        <select id="topicSelect">
+            <option value="">-- choose --</option>
+            <option value="care">Care Volunteer</option>
+            <option value="admin">Administrative Volunteer</option>
+            <option value="outreach">Outreach Volunteer</option>
+            <option value="rescue">Rescue Support Volunteer</option>
+        </select>
+
+        <span id="dropError"></span>
+
+        <label>Which tasks would you like to do?</label>
+        <div class="check-group">
+            <input type="checkbox" name="interests"> Feeding <br>
+            <input type="checkbox" name="interests"> Cleaning <br>
+            <input type="checkbox" name="interests"> Paperwork <br>
+            <input type="checkbox" name="interests"> Events / Fundraising <br>
+        </div>
+
+        <span id="checkError"></span>
+
+        <label>How many hours per week can you volunteer at the shelter?</label>
+        <input type="number" id="thirdQuestion" min="0">
+        <span id="thirdError"></span>
+        <button type="submit">Join as a Volunteer!</button>
+        <p id="successMessage"></p>
+        <a href="index.html" class="home-link">Return to Homepage</a>
+    </form>
+
+</div>
+<script src="script.js"></script>
+
+</body>
+</html>
